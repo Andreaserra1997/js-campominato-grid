@@ -22,6 +22,10 @@ h1 {
     padding-left: 1rem;
 }
 
+button {
+    padding-inline: 1.5rem;
+}
+
 main {
     display: flex;
     justify-content: center;
