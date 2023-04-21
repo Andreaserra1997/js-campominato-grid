@@ -6,18 +6,11 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 const eleGrid = document.querySelector('.grid');
 const btnPlay = document.querySelector('#play');
 
-let modEasy = document.querySelector('#easy')
-modEasy = 100;
-
-let modHard = document.querySelector('#hard')
-modHard = 81;
-
-let modCrazy = document.querySelector('#crazy')
-modCrazy = 49;
+const selectDifficulty = document.querySelector('#difficulty').value;
 
 btnPlay.addEventListener('click',
     function () {
-        createGrid(modEasy, eleGrid);
+        createGrid(100, eleGrid);
     }
 );
 
