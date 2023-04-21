@@ -12,9 +12,7 @@ createGrid(100, eleGrid);
 /* FUNCTION DEFINITIONS */
 
 function createGrid(numCells, eleContainer) {
-	for (let i = 0; i < numCells; i++) {
-		const cell = document.createElement('div');
-		cell.classList.add('cell');
-		eleContainer.append(cell);
+	for (let i = 1; i <= numCells; i++) {
+        eleContainer.innerHTML += `<div class="cell">${i}</div>`;
 	}
 };
