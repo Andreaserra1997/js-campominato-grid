@@ -22,6 +22,10 @@ h1 {
     padding-left: 1rem;
 }
 
+select {
+    padding-right: 4rem;
+}
+
 button {
     padding-inline: 1.5rem;
 }
