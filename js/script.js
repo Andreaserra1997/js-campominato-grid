@@ -13,6 +13,14 @@ createGrid(100, eleGrid);
 
 function createGrid(numCells, eleContainer) {
 	for (let i = 1; i <= numCells; i++) {
-        eleContainer.innerHTML += `<div class="cell">${i}</div>`;
+        // eleContainer.innerHTML += `<div class="cell">${i}</div>`;
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.innerHTML = [i];
+        eleContainer.append(cell);
+        cell.addEventListener('click', function() {
+			console.log(cell);
+			cell.classList.toggle('clicked');
+		});
 	}
 };
