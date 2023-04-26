@@ -6,28 +6,16 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 const eleGrid = document.querySelector('.grid');
 const eleCell = document.querySelector('.cell');
 const btnPlay = document.querySelector('#play');
+const selectDifficulty = document.querySelector('#difficulty');
+const eleHelp = document.querySelector('.help');
 
 btnPlay.addEventListener('click',
     function () {
-        const selectDifficulty = document.querySelector('#difficulty');
-        let valueDifficulty = selectDifficulty.options[selectDifficulty.selectedIndex].value;
-        // const whEasy = 'calc(100% / 10)'
-        // const whHard = 'calc(100% / 9)'
-        // const whCrazy = 'calc(100% / 7)'
-
-        if (valueDifficulty === 'easy') {
-            // eleCell.style.width = whEasy;
-            // eleCell.style.height = whEasy;
-            createGrid(100, eleGrid);
-        } else if (valueDifficulty === 'hard') {
-            // eleCell.style.width = whHard;
-            // eleCell.style.height = whHard;
-            createGrid(81, eleGrid)
-        } else if (valueDifficulty === 'crazy') {
-            // eleCell.style.width = whCrazy;
-            // eleCell.style.height = whCrazy;
-            createGrid(49, eleGrid)
-        }
+        eleHelp.classList.add('hidden');
+	    eleGrid.classList.remove('hidden');
+        const nCells = parseInt(selectDifficulty.value);
+        eleGrid.style.setProperty('--sideSquare', Math.sqrt(nCells));
+        createGrid(nCells, eleGrid);
     }
 );
 
